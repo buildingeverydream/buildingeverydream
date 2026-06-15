@@ -45,7 +45,8 @@ body[data-lang="es"] [data-es].service-panel.active{display:grid!important}
 
 /* LANG BAR */
 .lang-bar{background:var(--navy);display:flex;justify-content:flex-end;align-items:center;padding:.4rem 2rem;gap:.75rem}
-.lang-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:.2rem .85rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:.2rem .85rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.lang-btn:hover{border-color:rgba(255,255,255,.5);color:rgba(255,255,255,.9)}
 .lang-btn.active{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700}
 
 /* NAV */
@@ -72,7 +73,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(15,31,61,0.97);backdrop-fi
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,61,.92) 0%,rgba(15,31,61,.6) 60%,rgba(15,31,61,.3) 100%)}
 .hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 2.5rem;width:100%}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:.5rem 1rem;margin-bottom:1.25rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.45rem 1rem;border-radius:99px;margin-bottom:1.5rem;width:fit-content}
 .hero-eyebrow::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;display:block}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:1.25rem;max-width:720px}
 .hero h1 span{color:var(--gold)}
@@ -97,7 +98,7 @@ section{padding:5.5rem 2.5rem}
 /* SERVICES */
 .services-section{background:var(--off-white)}
 .service-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.tab-btn{background:var(--white);border:1.5px solid var(--border);color:var(--text-mid);padding:.45rem 1rem;border-radius:99px;font-size:.82rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.tab-btn{background:var(--white);border:1.5px solid var(--border);color:var(--text-mid);padding:.45rem 1rem;border-radius:99px;font-size:.82rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
 .tab-btn:hover{border-color:var(--navy);color:var(--navy)}
 .tab-btn.active{background:var(--navy);border-color:var(--navy);color:var(--white);font-weight:600}
 .service-panel{display:none}
@@ -149,10 +150,10 @@ section{padding:5.5rem 2.5rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group{margin-bottom:1.1rem}
 .form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:.35rem;letter-spacing:.02em}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:var(--radius);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .15s}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:var(--radius);font-size:.9rem;font-family:'Inter',sans-serif;color:var(--text);background:var(--white);transition:all .2s}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--navy)}
 .form-group textarea{height:100px;resize:vertical}
-.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:.9rem;border-radius:var(--radius);font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s}
+.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:.9rem;border-radius:var(--radius);font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
 .form-submit:hover{background:var(--navy-mid)}
 .form-success{display:none;text-align:center;padding:3rem 1rem}
 .form-success .big{font-size:2.5rem;margin-bottom:.75rem}
@@ -163,9 +164,9 @@ section{padding:5.5rem 2.5rem}
 .faq-section{background:var(--off-white)}
 .faq-list{max-width:740px}
 .faq-item{border:1.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.65rem;overflow:hidden;background:var(--white)}
-.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .15s}
+.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all .2s}
 .faq-q:hover{background:var(--off-white)}
-.faq-arrow{width:22px;height:22px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .15s;font-size:.9rem}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .15s;font-size:.65rem;color:var(--navy)}
 .faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--navy);color:var(--white)}
 .faq-a{display:none;padding:0 1.25rem 1.1rem;font-size:.88rem;color:var(--text-mid);line-height:1.75;border-top:1px solid var(--border);font-weight:300}
 .faq-item.open .faq-a{display:block}
@@ -235,6 +236,7 @@ footer a:hover{color:var(--gold-light)}
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div data-en>
       <div class="hero-eyebrow">Fort Worth &amp; DFW Area &middot; Residential &amp; Commercial</div>
@@ -267,19 +269,371 @@ footer a:hover{color:var(--gold-light)}
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES EN -->
 <section id="services" class="services-section" data-en>
   <div class="container">
     <div class="section-eyebrow">What We Do</div>
     <div class="gold-line"></div>
     <h2 class="section-title">Residential &amp; Commercial Services</h2>
     <p class="section-sub">From custom dream homes to commercial builds and everything in between — we handle every scale with the same commitment to quality.</p>
+    <div class="service-tabs" id="en-tabs">
+      <button class="tab-btn active" onclick="showSvc('en','en-homes',this)">Custom Homes</button>
+      <button class="tab-btn" onclick="showSvc('en','en-commercial',this)">Commercial</button>
+      <button class="tab-btn" onclick="showSvc('en','en-roofing',this)">Roofing</button>
+      <button class="tab-btn" onclick="showSvc('en','en-drainage',this)">Drainage</button>
+      <button class="tab-btn" onclick="showSvc('en','en-fencing',this)">Fencing</button>
+      <button class="tab-btn" onclick="showSvc('en','en-concrete',this)">Concrete</button>
+      <button class="tab-btn" onclick="showSvc('en','en-remodel',this)">Remodeling</button>
+      <button class="tab-btn" onclick="showSvc('en','en-storm',this)">Storm Restoration</button>
+    </div>
+    <div id="en-homes" class="service-panel active">
+      <div class="service-info">
+        <h3>Custom Home Building</h3>
+        <p>We build your dream home from the ground up — collaborating closely with you through every phase to ensure the result matches your vision and exceeds your expectations.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Full custom design &amp; build</li>
+          <li><div class="check"></div>New construction on your lot</li>
+          <li><div class="check"></div>Open concept &amp; modern layouts</li>
+          <li><div class="check"></div>Premium finishes &amp; fixtures</li>
+          <li><div class="check"></div>Energy-efficient designs</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:white;font-weight:600">Custom Homes</div>
+    </div>
+    <div id="en-commercial" class="service-panel">
+      <div class="service-info">
+        <h3>Commercial Construction</h3>
+        <p>We deliver professional commercial projects on time and within budget, from office buildings to retail spaces and industrial facilities.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Office &amp; retail builds</li>
+          <li><div class="check"></div>Industrial facilities</li>
+          <li><div class="check"></div>Code compliance experts</li>
+          <li><div class="check"></div>Fast project completion</li>
+          <li><div class="check"></div>Minimal disruption</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--gold),var(--navy));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:white;font-weight:600">Commercial</div>
+    </div>
+    <div id="en-roofing" class="service-panel">
+      <div class="service-info">
+        <h3>Roofing</h3>
+        <p>Professional roofing services for new installations, repairs, and replacements. We use quality materials and expert workmanship.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>New roof installation</li>
+          <li><div class="check"></div>Repairs &amp; replacement</li>
+          <li><div class="check"></div>Inspections &amp; maintenance</li>
+          <li><div class="check"></div>Warranty coverage</li>
+          <li><div class="check"></div>Weather-resistant materials</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy),var(--off-white));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:var(--navy);font-weight:600">Roofing</div>
+    </div>
+    <div id="en-drainage" class="service-panel">
+      <div class="service-info">
+        <h3>Drainage Solutions</h3>
+        <p>Expert drainage systems to protect your property from water damage and flooding. We design custom solutions for your specific needs.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Grading &amp; slope work</li>
+          <li><div class="check"></div>French drains</li>
+          <li><div class="check"></div>Sump pump systems</li>
+          <li><div class="check"></div>Foundation drainage</li>
+          <li><div class="check"></div>Flood prevention</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--off-white),var(--navy));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:var(--navy);font-weight:600">Drainage</div>
+    </div>
+    <div id="en-fencing" class="service-panel">
+      <div class="service-info">
+        <h3>Fencing &amp; Gates</h3>
+        <p>Beautiful and durable fencing solutions that enhance your property's security, privacy, and curb appeal.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Residential fencing</li>
+          <li><div class="check"></div>Commercial barriers</li>
+          <li><div class="check"></div>Custom gate systems</li>
+          <li><div class="check"></div>Privacy screens</li>
+          <li><div class="check"></div>Pool fencing</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--gold),var(--off-white));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:var(--navy);font-weight:600">Fencing</div>
+    </div>
+    <div id="en-concrete" class="service-panel">
+      <div class="service-info">
+        <h3>Concrete Work</h3>
+        <p>High-quality concrete services for driveways, patios, foundations, and more. Built to last with expert finishing.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Driveways &amp; parking</li>
+          <li><div class="check"></div>Patios &amp; walkways</li>
+          <li><div class="check"></div>Foundation work</li>
+          <li><div class="check"></div>Decorative finishes</li>
+          <li><div class="check"></div>Repairs &amp; sealing</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy-mid),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:white;font-weight:600">Concrete</div>
+    </div>
+    <div id="en-remodel" class="service-panel">
+      <div class="service-info">
+        <h3>Remodeling</h3>
+        <p>Transform your home with our expert remodeling services. From kitchens and bathrooms to whole-house renovations.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Kitchen remodels</li>
+          <li><div class="check"></div>Bathroom renovations</li>
+          <li><div class="check"></div>Room additions</li>
+          <li><div class="check"></div>Interior updates</li>
+          <li><div class="check"></div>Full home renovations</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--off-white),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:var(--navy);font-weight:600">Remodeling</div>
+    </div>
+    <div id="en-storm" class="service-panel">
+      <div class="service-info">
+        <h3>Storm Restoration</h3>
+        <p>Emergency response to storm damage. We quickly assess and restore your property to its original condition.</p>
+        <ul class="service-features">
+          <li><div class="check"></div>Rapid response 24/7</li>
+          <li><div class="check"></div>Roof damage repair</li>
+          <li><div class="check"></div>Water damage restoration</li>
+          <li><div class="check"></div>Insurance coordination</li>
+          <li><div class="check"></div>Full restoration</li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy),var(--off-white));display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(15,31,61,.15);color:var(--navy);font-weight:600">Storm Restoration</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="services-section" data-en>
+  <div class="container">
+    <div class="section-eyebrow">Our Work</div>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Recent Projects</h2>
+    <p class="section-sub">Showcasing some of our finest work in residential and commercial construction across the DFW area.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-img">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--gold))"></div>
+      </div>
+      <div class="portfolio-img">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--gold),var(--navy))"></div>
+      </div>
+      <div class="portfolio-img tall">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--off-white),var(--navy))"></div>
+      </div>
+      <div class="portfolio-img">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--off-white))"></div>
+      </div>
+      <div class="portfolio-img">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--gold),var(--off-white))"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="why-section" data-en>
+  <div class="container">
+    <div class="section-eyebrow" style="color:var(--gold)">Why Choose Us</div>
+    <div class="gold-line"></div>
+    <h2 class="section-title why-title">Why Building Every Dream</h2>
+    <p class="section-sub why-sub">15+ years of trusted construction service in Fort Worth and the DFW area.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">⭐</span>
+        <h4>Expert Craftsmanship</h4>
+        <p>Meticulous attention to detail in every project, from foundation to final touches.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤝</span>
+        <h4>Client Focused</h4>
+        <p>We listen, communicate, and ensure your vision becomes reality on schedule.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">✓</span>
+        <h4>Quality Guaranteed</h4>
+        <p>All work backed by warranty and built with premium materials and proven methods.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💰</span>
+        <h4>Fair Pricing</h4>
+        <p>Competitive rates without sacrificing quality or cutting corners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="services-section" data-en>
+  <div class="container">
+    <div class="section-eyebrow">Our Approach</div>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Our Process</h2>
+    <p class="section-sub">We follow a proven, transparent process to deliver excellence on every project.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <h4>1. Consultation</h4>
+        <p>We meet to understand your needs, budget, and vision for your project.</p>
+      </div>
+      <div class="process-step">
+        <h4>2. Design &amp; Planning</h4>
+        <p>Our team develops detailed plans and specifications for your approval.</p>
+      </div>
+      <div class="process-step">
+        <h4>3. Permitting</h4>
+        <p>We handle all necessary permits and ensure code compliance.</p>
+      </div>
+      <div class="process-step">
+        <h4>4. Construction</h4>
+        <p>Expert execution with regular updates and quality checkpoints.</p>
+      </div>
+      <div class="process-step">
+        <h4>5. Inspection</h4>
+        <p>Final walk-through and quality verification before project completion.</p>
+      </div>
+      <div class="process-step">
+        <h4>6. Follow-Up</h4>
+        <p>Ongoing support and warranty coverage for your peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="services-section" data-en>
+  <div class="container">
+    <div class="section-eyebrow">Get Started</div>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Contact Us for Your Free Quote</h2>
+    <p class="section-sub">Ready to build your dream? Reach out today for a consultation.</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>We're ready to discuss your project and provide a detailed quote.</p>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div>
+            <strong>Service Area</strong>
+            <span>Fort Worth &amp; DFW Metroplex</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div>
+            <strong>Phone</strong>
+            <span>(817) 555-0100</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <strong>Email</strong>
+            <span>hello@buildingevery dream.com</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" required/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required/>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" required/>
+        </div>
+        <div class="form-group">
+          <label>Project Type</label>
+          <select required>
+            <option value="">Select a service</option>
+            <option>Custom Homes</option>
+            <option>Commercial</option>
+            <option>Roofing</option>
+            <option>Drainage</option>
+            <option>Fencing</option>
+            <option>Concrete</option>
+            <option>Remodeling</option>
+            <option>Storm Restoration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Details</label>
+          <textarea required placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Quote Request</button>
+        <div class="form-success">
+          <div class="big">✓</div>
+          <h4>Thank You!</h4>
+          <p>We've received your request and will contact you shortly.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section" data-en>
+  <div class="container">
+    <div class="section-eyebrow">Questions</div>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What areas do you serve?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">We serve Fort Worth, Arlington, Irving, and throughout the greater Dallas-Fort Worth metroplex. Contact us for your specific location.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How long does a typical project take?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Timeline varies based on project scope. A small renovation might take 4-8 weeks, while custom homes typically take 6-12 months. We provide detailed schedules during planning.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do you handle permits and inspections?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Yes! We manage all permits, inspections, and code compliance. You won't have to worry about the paperwork.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What's your warranty policy?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">All our work comes with a comprehensive warranty. We stand behind our craftsmanship and will address any issues that arise.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can you work with my existing contractor or architect?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Absolutely! We collaborate well with other professionals. Many of our projects involve coordination with architects, engineers, and consultants.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How do I get a free quote?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Fill out our contact form above or give us a call. We'll schedule a consultation to discuss your project and provide a detailed quote at no cost.</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 Building Every Dream. All rights reserved. | Serving Fort Worth &amp; DFW Area</p>
+  <p>&copy; 2026 Building Every Dream. All rights reserved. <span class="footer-divider">|</span> Serving Fort Worth &amp; DFW Area</p>
 </footer>
 
 <script>
@@ -295,6 +649,33 @@ function toggleMenu() {
 
 function closeMobileMenu() {
   document.getElementById('mobile-menu').classList.remove('open');
+}
+
+function showSvc(lang, svcId, btn) {
+  const tabsId = lang === 'en' ? 'en-tabs' : 'es-tabs';
+  const tabs = document.querySelectorAll(`#${tabsId} .tab-btn`);
+  const panels = document.querySelectorAll(`[id^='${lang}-']`);
+  tabs.forEach(t => t.classList.remove('active'));
+  panels.forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(svcId).classList.add('active');
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  form.style.display = 'none';
+  form.nextElementSibling.style.display = 'block';
+  setTimeout(() => {
+    form.style.display = 'grid';
+    form.nextElementSibling.style.display = 'none';
+    form.reset();
+  }, 3000);
 }
 </script>
 
