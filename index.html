@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Building Every Dream | Custom Homes & General Construction</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f3d;
+  --navy-mid:#1a3260;
+  --gold:#c9a84c;
+  --gold-light:#e8c97a;
+  --off-white:#f8f7f4;
+  --white:#ffffff;
+  --text:#1a1a2e;
+  --text-mid:#555566;
+  --border:#e2e0d8;
+  --radius:6px;
+  --radius-lg:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.6}
+
+/* LANGUAGE SWITCHING */
+[data-en],[data-es]{display:none!important}
+body[data-lang="en"] [data-en]{display:block!important}
+body[data-lang="es"] [data-es]{display:block!important}
+/* Override for specific display types */
+body[data-lang="en"] [data-en].hero-stats,
+body[data-lang="es"] [data-es].hero-stats,
+body[data-lang="en"] [data-en].hero-btns,
+body[data-lang="es"] [data-es].hero-btns{display:flex!important}
+body[data-lang="en"] [data-en].why-grid,
+body[data-lang="es"] [data-es].why-grid,
+body[data-lang="en"] [data-en].process-grid,
+body[data-lang="es"] [data-es].process-grid,
+body[data-lang="en"] [data-en].portfolio-grid,
+body[data-lang="es"] [data-es].portfolio-grid,
+body[data-lang="en"] [data-en].contact-wrap,
+body[data-lang="es"] [data-es].contact-wrap{display:grid!important}
+body[data-lang="en"] [data-en].service-panel.active,
+body[data-lang="es"] [data-es].service-panel.active{display:grid!important}
+
+/* LANG BAR */
+.lang-bar{background:var(--navy);display:flex;justify-content:flex-end;align-items:center;padding:.4rem 2rem;gap:.75rem}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:.2rem .85rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.lang-btn.active{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(15,31,61,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:70px;border-bottom:1px solid rgba(201,168,76,.1)}
+.nav-logo{display:flex;align-items:center;gap:.85rem;text-decoration:none}
+.nav-logo img{height:42px;width:42px;object-fit:contain;filter:brightness(0) invert(1)}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-main{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:.01em}
+.nav-logo-sub{font-size:.6rem;font-weight:500;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.nav-links{display:flex;gap:.1rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.82rem;font-weight:500;padding:.4rem .75rem;border-radius:var(--radius);transition:all .15s;letter-spacing:.01em}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;padding:.4rem 1.1rem!important;border-radius:var(--radius)!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem;z-index:199;border-bottom:1px solid rgba(201,168,76,.2);flex-direction:column;gap:.25rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;font-weight:500;padding:.65rem .5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.mobile-menu a:last-child{border-bottom:none;background:var(--gold);color:var(--navy);font-weight:700;border-radius:var(--radius);text-align:center;margin-top:.5rem;padding:.75rem}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,31,61,.92) 0%,rgba(15,31,61,.6) 60%,rgba(15,31,61,.3) 100%)}
+.hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 2.5rem;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:.5rem 1rem;margin-bottom:1.25rem}
+.hero-eyebrow::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;display:block}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:1.25rem;max-width:720px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:520px;margin-bottom:2.5rem;line-height:1.75;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;padding:.85rem 2rem;border-radius:var(--radius);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35);padding:.85rem 2rem;border-radius:var(--radius);font-size:.95rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.hero-stats{display:flex;gap:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--gold);display:block;line-height:1}
+.hero-stat-label{font-size:.7rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-top:.3rem;display:block}
+
+/* SECTIONS */
+section{padding:5.5rem 2.5rem}
+.container{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:.9rem}
+.section-sub{font-size:1rem;color:var(--text-mid);max-width:560px;margin-bottom:3rem;line-height:1.75;font-weight:300}
+.gold-line{width:48px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:1.5rem}
+
+/* SERVICES */
+.services-section{background:var(--off-white)}
+.service-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.tab-btn{background:var(--white);border:1.5px solid var(--border);color:var(--text-mid);padding:.45rem 1rem;border-radius:99px;font-size:.82rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.tab-btn:hover{border-color:var(--navy);color:var(--navy)}
+.tab-btn.active{background:var(--navy);border-color:var(--navy);color:var(--white);font-weight:600}
+.service-panel{display:none}
+.service-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.service-info h3{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
+.service-info p{color:var(--text-mid);margin-bottom:1.25rem;line-height:1.75;font-weight:300}
+.service-features{list-style:none;margin-bottom:1.25rem}
+.service-features li{display:flex;align-items:flex-start;gap:.65rem;padding:.5rem 0;font-size:.9rem;color:var(--text-mid);border-bottom:1px solid var(--border)}
+.service-features li:last-child{border-bottom:none}
+.check{width:18px;height:18px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.check::after{content:'';width:8px;height:4px;border-left:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:rotate(-45deg) translateY(-1px);display:block}
+.service-img{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 20px 60px rgba(15,31,61,.15)}
+
+/* PORTFOLIO */
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.portfolio-img{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3}
+.portfolio-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.portfolio-img:hover img{transform:scale(1.04)}
+.portfolio-img.tall{grid-row:span 2;aspect-ratio:auto}
+.portfolio-img.tall img{height:100%}
+
+/* WHY */
+.why-section{background:var(--navy);padding:5.5rem 2.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg);padding:1.75rem;transition:all .2s}
+.why-card:hover{background:rgba(255,255,255,.09);border-color:rgba(201,168,76,.3)}
+.why-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
+.why-card h4{font-weight:600;font-size:.975rem;color:var(--white);margin-bottom:.4rem}
+.why-card p{font-size:.86rem;color:rgba(255,255,255,.48);line-height:1.65}
+.why-title{color:var(--white)!important}
+.why-sub{color:rgba(255,255,255,.5)!important}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+.process-step{background:var(--off-white);border-radius:var(--radius-lg);padding:1.75rem;border:1.5px solid var(--border);position:relative}
+.step-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(201,168,76,.2);position:absolute;top:.75rem;right:1rem;line-height:1}
+.process-step h4{font-weight:600;font-size:1rem;color:var(--navy);margin-bottom:.4rem}
+.process-step p{font-size:.86rem;color:var(--text-mid);line-height:1.65}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin-bottom:.6rem}
+.contact-info>p{color:var(--text-mid);font-size:.95rem;line-height:1.75;margin-bottom:2rem;font-weight:300}
+.contact-detail{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.25rem}
+.contact-icon{width:40px;height:40px;background:var(--navy);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-detail strong{display:block;font-weight:600;font-size:.9rem;color:var(--navy)}
+.contact-detail span{font-size:.8rem;color:var(--text-mid)}
+.contact-form{background:var(--off-white);border-radius:var(--radius-lg);padding:2.25rem;border:1.5px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:.35rem;letter-spacing:.02em}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:var(--radius);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--navy)}
+.form-group textarea{height:100px;resize:vertical}
+.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:.9rem;border-radius:var(--radius);font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s}
+.form-submit:hover{background:var(--navy-mid)}
+.form-success{display:none;text-align:center;padding:3rem 1rem}
+.form-success .big{font-size:2.5rem;margin-bottom:.75rem}
+.form-success h4{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:.5rem}
+.form-success p{color:var(--text-mid);font-size:.9rem}
+
+/* FAQ */
+.faq-section{background:var(--off-white)}
+.faq-list{max-width:740px}
+.faq-item{border:1.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.65rem;overflow:hidden;background:var(--white)}
+.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .15s}
+.faq-q:hover{background:var(--off-white)}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .15s;font-size:.9rem}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--navy);color:var(--white)}
+.faq-a{display:none;padding:0 1.25rem 1.1rem;font-size:.88rem;color:var(--text-mid);line-height:1.75;border-top:1px solid var(--border);font-weight:300}
+.faq-item.open .faq-a{display:block}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.9;border-top:1px solid rgba(201,168,76,.2)}
+footer strong{color:var(--white);font-weight:600}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{color:var(--gold-light)}
+.footer-divider{color:rgba(255,255,255,.2);margin:0 .5rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{min-height:80vh}
+  .hero-content{padding:0 1.25rem}
+  .hero h1{font-size:2.4rem}
+  .hero-stats{gap:1.75rem}
+  section{padding:3.5rem 1.25rem}
+  .why-section{padding:3.5rem 1.25rem}
+  .service-panel.active{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .portfolio-img.tall{grid-row:span 1}
+  .contact-wrap{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Building Every Dream</span>
+      <span class="nav-logo-sub">Custom Homes &amp; Construction</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#services" id="nav-services">Services</a></li>
+    <li><a href="#portfolio" id="nav-portfolio">Our Work</a></li>
+    <li><a href="#why" id="nav-why">Why Us</a></li>
+    <li><a href="#process" id="nav-process">Process</a></li>
+    <li><a href="#faq" id="nav-faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta" id="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="closeMobileMenu()" id="mob-services">Services</a>
+  <a href="#portfolio" onclick="closeMobileMenu()" id="mob-portfolio">Our Work</a>
+  <a href="#why" onclick="closeMobileMenu()" id="mob-why">Why Us</a>
+  <a href="#process" onclick="closeMobileMenu()" id="mob-process">Process</a>
+  <a href="#faq" onclick="closeMobileMenu()" id="mob-faq">FAQ</a>
+  <a href="#contact" onclick="closeMobileMenu()" id="mob-cta">Get a Free Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div data-en>
+      <div class="hero-eyebrow">Fort Worth &amp; DFW Area &middot; Residential &amp; Commercial</div>
+      <h1>Building Every<br/><span>Dream</span></h1>
+      <p class="hero-sub">Custom homes and quality construction crafted with precision. From the foundation to the final detail — we build what you envision.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">Get a Free Quote</a>
+        <a href="#portfolio" class="btn-ghost">View Our Work</a>
+      </div>
+    </div>
+    <div data-es>
+      <div class="hero-eyebrow">Fort Worth y Área DFW &middot; Residencial y Comercial</div>
+      <h1>Construyendo<br/>Cada <span>Sueño</span></h1>
+      <p class="hero-sub">Casas personalizadas y construcción de calidad con precisión. Desde los cimientos hasta el último detalle — construimos lo que visualizas.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">Obtener Presupuesto Gratis</a>
+        <a href="#portfolio" class="btn-ghost">Ver Nuestro Trabajo</a>
+      </div>
+    </div>
+    <div class="hero-stats" data-en>
+      <div><span class="hero-stat-num">15+</span><span class="hero-stat-label">Years Experience</span></div>
+      <div><span class="hero-stat-num">200+</span><span class="hero-stat-label">Projects Completed</span></div>
+      <div><span class="hero-stat-num">DFW</span><span class="hero-stat-label">Service Area</span></div>
+    </div>
+    <div class="hero-stats" data-es>
+      <div><span class="hero-stat-num">15+</span><span class="hero-stat-label">Años de Experiencia</span></div>
+      <div><span class="hero-stat-num">200+</span><span class="hero-stat-label">Proyectos Completados</span></div>
+      <div><span class="hero-stat-num">DFW</span><span class="hero-stat-label">Área de Servicio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section" data-en>
+  <div class="container">
+    <div class="section-eyebrow">What We Do</div>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Residential &amp; Commercial Services</h2>
+    <p class="section-sub">From custom dream homes to commercial builds and everything in between — we handle every scale with the same commitment to quality.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Building Every Dream. All rights reserved. | Serving Fort Worth &amp; DFW Area</p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+}
+
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+</script>
+
+</body>
+</html>
